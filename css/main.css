@@ -1,0 +1,228 @@
+@import url(_reset.css);
+@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@700&family=Inter:wght@600;700&display=swap");
+
+.body {
+  color: #ffffff;
+  min-height: 100vh;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(1, 8, 14, 1) 25%,
+    rgba(80, 94, 255, 0.85) 50%,
+    rgba(1, 8, 14, 1) 75%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 2rem;
+}
+
+@media screen and (max-width: 480px) {
+  .dashboard__item__button {
+    font-size: 1.2rem;
+    padding: 0.8rem 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .body {
+    padding: 2rem calc((100vw - 400px) / 2);
+  }
+
+  .dashboard__items {
+    flex-direction: column; /* Alinha os itens da dashboard em coluna */
+    gap: 2rem; /* Ajusta o espaçamento entre os itens */
+  }
+
+  .page-title {
+    font-size: 3rem; /* Aumenta o tamanho da fonte para telas menores */
+  }
+
+  .divisor__line {
+    width: 200px; /* Aumenta a largura da linha de separação */
+  }
+
+  .dashboard {
+    padding: 1.5rem;
+  }
+
+  .dashboard__item__name {
+    font-size: 1.5rem; /* Aumenta o tamanho da fonte dos nomes dos itens da dashboard */
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .body {
+    padding: 2rem calc((100vw - 980px) / 2); /* Ajusta o padding para centralizar melhor o conteúdo */
+  }
+
+  .dashboard__items {
+    flex-direction: column; /* Alinha os itens da dashboard em linha */
+    gap: 20px; /* Ajusta o espaçamento entre os itens */
+  }
+
+  .page-title {
+    font-size: 4rem; /* Ajusta o tamanho da fonte para telas maiores */
+  }
+
+  .divisor__line {
+    width: 400px; /* Aumenta a largura da linha de separação */
+  }
+
+  .dashboard__item__name {
+    font-size: 2.5rem; /* Aumenta o tamanho da fonte dos nomes dos itens da dashboard */
+  }
+
+  .dashboard__item__button {
+    font-size: 1.75rem; /* Ajusta o tamanho da fonte dos botões */
+    padding: 1rem 2rem; /* Aumenta o padding dos botões */
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .body {
+    padding: 2rem calc((100vw - 1086px) / 2);
+  }
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.divisor {
+  display: flex;
+  gap: 53px;
+  align-items: center;
+
+  margin: 88px 0px 40px;
+}
+
+.divisor__line {
+  height: 1px;
+  width: 282px;
+  background-color: #00f4bf;
+}
+
+.page-title {
+  font-family: "Chakra Petch", sans-serif;
+  font-weight: 700;
+  font-size: 5rem;
+
+  margin-bottom: 2.5rem;
+}
+
+.page-title__emphasis {
+  color: #505eff;
+}
+
+.dashboard {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 2rem;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #00f4bf;
+  padding: 3rem;
+  width: 100%;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.dashboard:hover {
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.dashboard__items {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dashboard__items__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  font-family: "Inter", sans-serif;
+}
+
+.dashboard__item__img {
+  box-shadow: 0px 0px 24px 8px rgba(24, 118, 232, 0.25);
+  margin-bottom: 1rem;
+}
+
+.dashboard__item__img--rented {
+  position: relative;
+}
+
+.dashboard__item__img--rented::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  background-color: rgba(1, 8, 14, 0.4);
+}
+
+.dashboard__item__name {
+  font-weight: 600;
+  font-size: 2rem;
+
+  margin-bottom: 2.5rem;
+}
+
+.dashboard__item__button {
+  display: flex;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.5rem;
+  background-color: #1875e8;
+  /*background: linear-gradient(
+    90deg,
+    rgba(24, 117, 232, 1) 0%,
+    rgba(0, 212, 255, 1) 100%
+  );*/
+  color: #ffffff;
+  border: none;
+  padding: 1rem 1.5rem;
+  min-width: 13rem;
+  border-radius: 1rem;
+  transition: 0.3s ease;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.dashboard__item__button:hover {
+  color: #ffffff;
+  transform: translateY(-2px);
+  background-color: #1368cf;
+}
+
+.dashboard__item__button--return {
+  background-color: #01080e !important;
+  color: white; /* Ajusta a cor do texto se necessário */
+  transition: background-color 0.3s ease;
+}
+
+.dashboard__item__button--return:hover {
+  background-color: #0d1a24 !important; /* Um tom um pouco mais claro ao passar o mouse */
+}
+
+.hachuras {
+  margin-top: 1.5rem;
+  margin-right: 33px;
+  align-self: flex-end;
+}
+
+.dashboard__item__img {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.dashboard__item__button {
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
